@@ -53,8 +53,8 @@ document.addEventListener('DOMContentLoaded', function () {
 		// Prism.highlightAll();
 		
 		buttonSolution.onclick = function() {
-    		window.open("https://app.finxter.com/learn/computer/science/" + task_id, "_blank");
-    	}
+    			window.open("https://app.finxter.com/learn/computer/science/" + task_id, "_blank");
+    		}
 	});
 
 });
