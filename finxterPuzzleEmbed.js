@@ -1,6 +1,15 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 	
+	// Load JQuery
+	var script = document.createElement('script');
+	script.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
+	script.type = 'text/javascript';
+	document.getElementsByTagName('head')[0].appendChild(script);
+
+
+	
+	// Load Puzzle
 	var finxter_puzzle = document.createElement('div');       
 	document.body.appendChild(finxter_puzzle);
 
@@ -8,16 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	finxter_puzzle.height = '300';
 	finxter_puzzle.innerHTML = '<h1 id="Title">Puzzle</h1>';
 
-	var buttonNext = document.createElement('button')
-    	document.body.appendChild(buttonNext);
-    
-    	buttonNext.innerHTML = 'Check Solution';
-    	buttonNext.style.width = '100';
-    	buttonNext.style.height = '25';
-    	buttonNext.style.fontSize = '20px';
-    	buttonNext.style.color = 'white';
-    	buttonNext.style.background = 'black'; 
-	
+
 	$.getJSON("https://app.finxter.com/newTask", function(json){
 		alert("hi");
 		task_id = json.id;
@@ -29,9 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		task_title = json.title;
 		task_choices = json.choices.split(",");
 		task_changeURL = json.changeURL;
-		upvotes = json.upvotes;
-		downvotes = json.downvotes;
-		loaded_tasks = json.numberOfLoadedTasks;
+
 
 		// escape less than signs (otherwise xml is assumed)
 		task_text = task_text.replace(/</g, '&lt');
@@ -42,11 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		// $("#Question").html(task_question);
 
 		// Prism.highlightAll();
-		
-		 
-    		buttonNext.onclick = function() {
-    			window.open("https://app.finxter.com/learn/computer/science/" + task_id, "_blank");
-    		}
 	});
 
 });
