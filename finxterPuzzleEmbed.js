@@ -1,4 +1,3 @@
-<script>
 document.addEventListener('DOMContentLoaded', function () {
 
 	// Create base div
@@ -192,6 +191,3 @@ else:
 	var id = Math.floor(Math.random() * puzzles.length);
 	return puzzles[id];
 }
-</script>
-
-</script>
