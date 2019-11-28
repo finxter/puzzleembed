@@ -2,50 +2,49 @@
 document.addEventListener('DOMContentLoaded', function () {
 
 	// Create base div
-	var finxter_puzzle = document.createElement('div');  
+	var finxter_puzzle = document.createElement('div'); 
+	finxter_puzzle.maxWidth = '300px';
+	finxter_puzzle.maxHeight = '600px';
+	finxter_puzzle.style.padding = '10px 10px 10px 10px';
+	finxter_puzzle.style.borderStyle = "solid";
+	finxter_puzzle.style.borderWidth = 'thin';
     
-    // Create Header & footer
-    
-    //var finxter_footer = document.createElement('div');
+	// Create Header
 	var finxter_logo = document.createElement('IMG');
 	finxter_logo.setAttribute("src", "https://blog.finxter.com/wp-content/uploads/2018/04/finxter.png");
 	finxter_logo.setAttribute("width", "140");
         
 	var finxter_header = document.createElement('div');
-    finxter_header.appendChild(finxter_logo);
+  finxter_header.appendChild(finxter_logo);
     
-    // Create Button
-    var buttonSolution = document.createElement('BUTTON');
-    buttonSolution.innerHTML = 'Check Solution';
+  // Create Button
+  var buttonSolution = document.createElement('BUTTON');
+	buttonSolution.innerHTML = 'Check Solution';
 	//buttonSolution.style.width = '200';
 	//buttonSolution.style.height = '70';
 	buttonSolution.style.fontSize = '16px';
 	buttonSolution.style.color = 'white';
 	buttonSolution.style.background = '#f44336'; // blue: '#008CBA';
 	buttonSolution.style.border = 'none';
-    buttonSolution.style.padding = '10px 20px';
-    buttonSolution.style.fontFamily = "Arial,sans-serif";
-    buttonSolution.style.fontWeight = 'bold';
-    buttonSolution.style.cursor = "pointer"; 
+	buttonSolution.style.padding = '10px 20px';
+	buttonSolution.style.fontFamily = "Arial,sans-serif";
+	buttonSolution.style.fontWeight = 'bold';
+	buttonSolution.style.cursor = "pointer"; 
+	buttonSolution.style.boxShadow = '0px 3px 3px grey';
     
-    var finxter_code = document.createElement('div');
-    logic(finxter_code, buttonSolution);
-    var finxter_button = document.createElement('div');
-    finxter_button.appendChild(buttonSolution);
-    
+	var finxter_code = document.createElement('div');
+	logic(finxter_code, buttonSolution);
+	var finxter_button = document.createElement('div');
+	finxter_button.appendChild(buttonSolution);
 
-    
-    // Create DOM	
+	// Create DOM	
 	finxter_puzzle.appendChild(finxter_header);
 	finxter_puzzle.appendChild(finxter_code);
 	finxter_puzzle.appendChild(finxter_button);
 	document.body.appendChild(finxter_puzzle);
 
-	//finxter_puzzle.width = '300';
-	//finxter_puzzle.height = '300';
-	
-	
-		
+
+
 });
 
 function logic(finxter_code, buttonSolution) {
@@ -57,7 +56,7 @@ function logic(finxter_code, buttonSolution) {
 	buttonSolution.onclick = function() {
 		window.open("https://app.finxter.com/learn/computer/science/" + res1[0], "_blank");
 		logic(finxter_code, buttonSolution);
-    }
+	}
 }
 
 function getPuzzle() {
@@ -193,4 +192,6 @@ else:
 	var id = Math.floor(Math.random() * puzzles.length);
 	return puzzles[id];
 }
+</script>
+
 </script>
