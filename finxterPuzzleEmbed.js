@@ -1,19 +1,21 @@
-<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+var getJSON = function(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.responseType = 'json';
+    xhr.onload = function() {
+      var status = xhr.status;
+      if (status === 200) {
+        callback(null, xhr.response);
+      } else {
+        callback(status, xhr.response);
+      }
+    };
+    xhr.send();
+};
 
 document.addEventListener('DOMContentLoaded', function () {
-	
-	// Load JQuery
-	//Load jQuery library using plain JavaScript
-	(function(){
-	  var newscript = document.createElement('script');
-	     newscript.type = 'text/javascript';
-	     newscript.async = true;
-	     newscript.src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js';
-	  (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(newscript);
-	})();
 
 
-	
 	// Load Puzzle
 	var finxter_puzzle = document.createElement('div');       
 	document.body.appendChild(finxter_puzzle);
@@ -35,6 +37,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	$("#Title").html("lskdfjlsdfj");
 	
+	getJSON('https://app.finxter.com/newTask',
+		function(err, data) {
+		  if (err !== null) {
+		    alert('Something went wrong: ' + err);
+		  } else {
+		    alert('Your query count: ' + data.query.count);
+		  }
+	});
+	/*
 	$.getJSON("https://app.finxter.com/newTask", function(json){
 		
 		task_id = json.id;
@@ -62,5 +73,6 @@ document.addEventListener('DOMContentLoaded', function () {
     			window.open("https://app.finxter.com/learn/computer/science/" + task_id, "_blank");
     		}
 	});
+	*/
 
 });
