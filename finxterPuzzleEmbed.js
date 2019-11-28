@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
     	buttonSolution.style.color = 'white';
     	buttonSolution.style.background = 'black';
 
+	$("#Title").html("lskdfjlsdfj");
 	
 	$.getJSON("https://app.finxter.com/newTask", function(json){
 		
