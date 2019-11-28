@@ -17,9 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
 	finxter_puzzle.height = '300';
 	finxter_puzzle.innerHTML = '<h1 id="Title">Puzzle</h1>';
 
+	alert("hi");
 
 	$.getJSON("https://app.finxter.com/newTask", function(json){
-		alert("hi");
+		
 		task_id = json.id;
 
 		task_text = json.txt;
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		task_text = task_text.replace(/</g, '&lt');
 
 		$("#Title").html("" + task_title + "");
-		// $("#Subtitle").html("Puzzle " + task_id + " - <a href='https://en.wikipedia.org/wiki/Elo_rating_system' target='_blank'>Elo</a>: " + task_elo + "");
+		//$("#Subtitle").html("Puzzle " + task_id + " - <a href='https://en.wikipedia.org/wiki/Elo_rating_system' target='_blank'>Elo</a>: " + task_elo + "");
 		// $("#Task").html(task_text);
 		// $("#Question").html(task_question);
 
