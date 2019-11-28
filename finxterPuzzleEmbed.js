@@ -1,3 +1,4 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 document.addEventListener('DOMContentLoaded', function () {
 	
@@ -27,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
     	buttonSolution.style.fontSize = '20px';
     	buttonSolution.style.color = 'white';
     	buttonSolution.style.background = 'black';
-	
+
 	
 	$.getJSON("https://app.finxter.com/newTask", function(json){
 		
