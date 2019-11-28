@@ -34,8 +34,6 @@ document.addEventListener('DOMContentLoaded', function () {
     	buttonSolution.style.fontSize = '20px';
     	buttonSolution.style.color = 'white';
     	buttonSolution.style.background = 'black';
-
-	$("#Title").html("lskdfjlsdfj");
 	
 	getJSON('https://app.finxter.com/newTask',
 		function(err, data) {
