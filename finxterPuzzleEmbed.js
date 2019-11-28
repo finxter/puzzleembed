@@ -1,42 +1,59 @@
-
+<script>
 document.addEventListener('DOMContentLoaded', function () {
 
-	// Load General Stuff
+	// Create base div
 	var finxter_puzzle = document.createElement('div');  
-	var finxter_header = document.createElement('h1');
-	var finxter_code = document.createElement('div');
-	
-	document.body.appendChild(finxter_puzzle);
+    
+    // Create Header & footer
+    
+    //var finxter_footer = document.createElement('div');
+	var finxter_logo = document.createElement('IMG');
+	finxter_logo.setAttribute("src", "https://blog.finxter.com/wp-content/uploads/2018/04/finxter.png");
+	finxter_logo.setAttribute("width", "140");
+        
+	var finxter_header = document.createElement('div');
+    finxter_header.appendChild(finxter_logo);
+    
+    // Create Button
+    var buttonSolution = document.createElement('BUTTON');
+    buttonSolution.innerHTML = 'Check Solution';
+	//buttonSolution.style.width = '200';
+	//buttonSolution.style.height = '70';
+	buttonSolution.style.fontSize = '16px';
+	buttonSolution.style.color = 'white';
+	buttonSolution.style.background = '#f44336'; // blue: '#008CBA';
+	buttonSolution.style.border = 'none';
+    buttonSolution.style.padding = '10px 20px';
+    buttonSolution.style.fontFamily = "Arial,sans-serif";
+    buttonSolution.style.fontWeight = 'bold';
+    buttonSolution.style.cursor = "pointer"; 
+    
+    var finxter_code = document.createElement('div');
+    logic(finxter_code, buttonSolution);
+    var finxter_button = document.createElement('div');
+    finxter_button.appendChild(buttonSolution);
+    
+
+    
+    // Create DOM	
 	finxter_puzzle.appendChild(finxter_header);
 	finxter_puzzle.appendChild(finxter_code);
+	finxter_puzzle.appendChild(finxter_button);
+	document.body.appendChild(finxter_puzzle);
 
-	finxter_puzzle.width = '300';
-	finxter_puzzle.height = '300';
-	finxter_header.innerHTML = '<h1 id="Title">Daily Finxter Puzzle</h1>';
+	//finxter_puzzle.width = '300';
+	//finxter_puzzle.height = '300';
 	
-	// Create Solution Button
-	var buttonSolution = document.createElement('button');
-    document.body.appendChild(buttonSolution);
 	
-	buttonSolution.style.width = '200';
-	buttonSolution.style.height = '30';
-	buttonSolution.style.fontSize = '20px';
-	buttonSolution.style.color = 'white';
-	buttonSolution.style.background = 'black';
-	buttonSolution.innerHTML = 'Check Solution';
-	
-	// Load Puzzle
-	logic(finxter_puzzle, buttonSolution);
-	
+		
 });
 
 function logic(finxter_code, buttonSolution) {
 	
 	var res1 = getPuzzle(); // [id, puzzle_string]
 	
-	finxter_code.innerHTML = '<pre>' + res1[1] + '</pre>';
+	finxter_code.innerHTML = '<pre># Python Puzzle\n' + res1[1] + '\n\n# What\'s the output?</pre>';
 
-	
 	buttonSolution.onclick = function() {
 		window.open("https://app.finxter.com/learn/computer/science/" + res1[0], "_blank");
 		logic(finxter_code, buttonSolution);
@@ -176,3 +193,4 @@ else:
 	var id = Math.floor(Math.random() * puzzles.length);
 	return puzzles[id];
 }
+</script>
