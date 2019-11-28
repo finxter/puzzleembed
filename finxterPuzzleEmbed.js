@@ -26,23 +26,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	// Create Solution Button
 	var buttonSolution = document.createElement('button');
-    	document.body.appendChild(buttonNext);
+    document.body.appendChild(buttonSolution);
     
-    	buttonSolution.innerHTML = 'Check Solution';
-    	buttonSolution.style.width = '125';
-    	buttonSolution.style.height = '30';
-    	buttonSolution.style.fontSize = '20px';
-    	buttonSolution.style.color = 'white';
-    	buttonSolution.style.background = 'black';
+	buttonSolution.innerHTML = 'Check Solution';
+	buttonSolution.style.width = '125';
+	buttonSolution.style.height = '30';
+	buttonSolution.style.fontSize = '20px';
+	buttonSolution.style.color = 'white';
+	buttonSolution.style.background = 'black';
 	
 	getJSON('https://app.finxter.com/newTask',
 		function(err, data) {
-		  if (err !== null) {
-		    alert('Something went wrong: ' + err);
-		  } else {
-		    alert('Your query count: ' + data.query.count);
-		  }
-	});
+		  document.getElementById('Title').innerHTML = "lsajflkjs";
+		}
+    );
 	/*
 	$.getJSON("https://app.finxter.com/newTask", function(json){
 		
