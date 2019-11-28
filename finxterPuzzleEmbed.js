@@ -17,7 +17,18 @@ document.addEventListener('DOMContentLoaded', function () {
 	finxter_puzzle.height = '300';
 	finxter_puzzle.innerHTML = '<h1 id="Title">Puzzle</h1>';
 
-
+	// Create Solution Button
+	var buttonSolution = document.createElement('button')
+    	document.body.appendChild(buttonNext);
+    
+    	buttonSolution.innerHTML = 'Check Solution';
+    	buttonSolution.style.width = '125';
+    	buttonSolution.style.height = '30';
+    	buttonSolution.style.fontSize = '20px';
+    	buttonSolution.style.color = 'white';
+    	buttonSolution.style.background = 'black';
+	
+	
 	$.getJSON("https://app.finxter.com/newTask", function(json){
 		alert("hi");
 		task_id = json.id;
@@ -40,6 +51,10 @@ document.addEventListener('DOMContentLoaded', function () {
 		// $("#Question").html(task_question);
 
 		// Prism.highlightAll();
+		
+		buttonSolution.onclick = function() {
+    		window.open("https://app.finxter.com/learn/computer/science/" + task_id, "_blank");
+    	}
 	});
 
 });
