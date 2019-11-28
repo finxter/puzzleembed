@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 		// escape less than signs (otherwise xml is assumed)
-		task_text = task_text.replace(/</g, '&lt');
+		// task_text = task_text.replace(/</g, '&lt');
 
 		$("#Title").html("" + task_title + "");
 		//$("#Subtitle").html("Puzzle " + task_id + " - <a href='https://en.wikipedia.org/wiki/Elo_rating_system' target='_blank'>Elo</a>: " + task_elo + "");
