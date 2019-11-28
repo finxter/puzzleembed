@@ -3,10 +3,14 @@
 document.addEventListener('DOMContentLoaded', function () {
 	
 	// Load JQuery
-	var script = document.createElement('script');
-	script.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
-	script.type = 'text/javascript';
-	document.getElementsByTagName('head')[0].appendChild(script);
+	//Load jQuery library using plain JavaScript
+	(function(){
+	  var newscript = document.createElement('script');
+	     newscript.type = 'text/javascript';
+	     newscript.async = true;
+	     newscript.src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js';
+	  (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(newscript);
+	})();
 
 
 	
