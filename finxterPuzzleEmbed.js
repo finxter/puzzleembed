@@ -17,10 +17,8 @@ document.addEventListener('DOMContentLoaded', function () {
 	finxter_puzzle.height = '300';
 	finxter_puzzle.innerHTML = '<h1 id="Title">Puzzle</h1>';
 
-<<<<<<< HEAD
 	alert("hi");
 
-=======
 	// Create Solution Button
 	var buttonSolution = document.createElement('button')
     	document.body.appendChild(buttonNext);
@@ -33,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
     	buttonSolution.style.background = 'black';
 	
 	
->>>>>>> 3a4984ff5c761cde7cdec95da65f284ccbc602b5
 	$.getJSON("https://app.finxter.com/newTask", function(json){
 		
 		task_id = json.id;
