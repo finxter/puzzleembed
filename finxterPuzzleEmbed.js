@@ -17,10 +17,8 @@ document.addEventListener('DOMContentLoaded', function () {
 	finxter_puzzle.height = '300';
 	finxter_puzzle.innerHTML = '<h1 id="Title">Puzzle</h1>';
 
-	alert("hi");
-
 	// Create Solution Button
-	var buttonSolution = document.createElement('button')
+	var buttonSolution = document.createElement('button');
     	document.body.appendChild(buttonNext);
     
     	buttonSolution.innerHTML = 'Check Solution';
